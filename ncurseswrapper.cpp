@@ -24,6 +24,18 @@ void ncurses::Print(std::string str) {
 	printw("%s", str.c_str());
 }
 
+game::Size ncurses::GetWindowSize(Window* w) {
+	game::Size size;
+
+	int y, x;
+	getmaxyx(w->Get(), y, x);
+
+	size.SetH(y);
+	size.SetW(x);
+
+	return size;
+}
+
 // class Window
 
 ncurses::Window::Window(WINDOW* w) : m_window(w) {

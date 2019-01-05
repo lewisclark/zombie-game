@@ -6,6 +6,8 @@
 #include <string>
 #include <exception>
 
+#include "position.h"
+
 namespace ncurses {
 	class Window;
 	//typedef WINDOW Window;
@@ -13,6 +15,7 @@ namespace ncurses {
 	std::unique_ptr<Window> Initialize();
 	void Kill();
 	void Print(std::string str);
+	game::Size GetWindowSize(Window* w);
 
 	class Window {
 		public:
