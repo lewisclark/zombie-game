@@ -23,7 +23,6 @@ namespace game {
 		void Initialize();
 		void Update();			// Update positions of player, zombies, health, etc.
 
-		// Returning a vector instead of array because I cannot find a simple way to combine multiple arrays into a single one
 		std::array<Entity*, MAX_ENTITIES> GetEntities();
 
 		private:
