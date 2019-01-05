@@ -18,6 +18,18 @@ namespace game {
 		virtual void Think();
 		virtual bool IsValid();
 
+		std::string& GetName();
+		void SetName(const std::string& name);
+		int GetHealth();
+		void SetHealth(const int& health);
+		void Hurt(const int& damage);
+		int GetMaxHealth();
+		void SetMaxHealth(const int& max_health);
+		Position& GetPosition();
+		void SetPosition(const Position& p);
+		Size& GetSize();
+		void SetSize(const Size& s);
+
 		private:
 		void Initialize();
 
