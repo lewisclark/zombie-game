@@ -9,6 +9,11 @@ namespace game {
 		Position();
 		Position(int x, int y);
 
+		int GetX();
+		int GetY();
+		void SetX(int x);
+		void SetY(int y);
+
 		private:
 		int m_x;
 		int m_y;
@@ -18,6 +23,11 @@ namespace game {
 		public:
 		Size();
 		Size(int w, int h);
+
+		int GetW();
+		int GetH();
+		void SetW(int w);
+		void SetH(int h);
 
 		private:
 		int m_w;
