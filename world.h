@@ -21,7 +21,7 @@ namespace game {
 		public:
 		World();
 		void Initialize();
-		void Update();			// Update positions of player, zombies, health, etc.
+		void Think();
 
 		std::array<Entity*, MAX_ENTITIES> GetEntities();
 

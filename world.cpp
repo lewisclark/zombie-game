@@ -17,7 +17,7 @@ void game::World::Initialize() {
 	});
 }
 
-void game::World::Update() {
+void game::World::Think() {
 	for (Entity* e : GetEntities()) {
 		if (e && e->IsValid()) {
 			e->Think();
