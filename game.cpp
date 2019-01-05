@@ -21,8 +21,6 @@ void game::Game::DestroyGame() {
 
 void game::Game::Loop() {
 	//ncurses::Print("Game::Loop()\n");
-	//int con_rows, con_columns;
-	//GetConsoleSize(&con_rows, &con_columns);
 
 	//m_inputmgr->HandleInput(); // inputmgr should send movement commands to the world instance (only player related) anything else is managed elsewhere
 	m_world->Think();
