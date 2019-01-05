@@ -4,9 +4,9 @@ game::Game::Game(ncurses::Window* w) {
 	Initialize(w);
 }
 
-void game::Game::Initialize(ncurses::Window*) {
+void game::Game::Initialize(ncurses::Window* w) {
 	m_inputmgr = std::make_unique<InputManager>();
-	m_drawmgr = std::make_unique<DrawManager>();
+	m_drawmgr = std::make_unique<DrawManager>(w);
 
 	NewGame(); // Immediately start a game for now until a menu exists
 }

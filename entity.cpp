@@ -21,7 +21,7 @@ void game::Entity::Initialize() {
 	m_position = game::Position();
 }
 
-void game::Entity::Draw() {
+void game::Entity::Draw(ncurses::Window*) {
 
 }
 
