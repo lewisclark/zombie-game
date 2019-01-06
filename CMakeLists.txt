@@ -3,7 +3,7 @@ project(shooter)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(sources main.cpp world.cpp entity.cpp item.cpp position.cpp player.cpp zombie.cpp character.cpp drawmanager.cpp game.cpp inputmanager.cpp ncurseswrapper.cpp)
+set(sources main.cpp world.cpp entity.cpp item.cpp position.cpp player.cpp zombie.cpp character.cpp drawmanager.cpp game.cpp inputmanager.cpp ncurseswrapper.cpp logger.cpp)
 
 include_directories(.)
 
