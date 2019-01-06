@@ -6,5 +6,6 @@
 
 #include "ncurseswrapper.h"
 #include "game.h"
+#include "logger.h"
 
 #endif
