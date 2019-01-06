@@ -25,7 +25,7 @@ void game::Entity::Draw(ncurses::Window* w) const {
 }
 
 void game::Entity::Think() {
-	GetPosition().SetX(GetPosition().GetX() + 1);
+
 }
 
 bool game::Entity::IsValid() const {
