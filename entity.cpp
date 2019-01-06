@@ -21,7 +21,7 @@ void game::Entity::Initialize() {
 }
 
 void game::Entity::Draw(ncurses::Window*) {
-
+	mvaddch(m_position.GetY(), m_position.GetX(), m_name.at(0)); // for debugging and testing only
 }
 
 void game::Entity::Think() {
