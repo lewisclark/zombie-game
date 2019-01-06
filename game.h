@@ -23,6 +23,7 @@ namespace game {
 		std::unique_ptr<InputManager> m_inputmgr;
 		std::unique_ptr<World> m_world;
 		std::unique_ptr<DrawManager> m_drawmgr;
+		ncurses::Window* m_window; // Window for the world to display players, zombies, items, etc.
 	};
 }
 

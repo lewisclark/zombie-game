@@ -5,6 +5,8 @@ game::Game::Game(ncurses::Window* w) {
 }
 
 void game::Game::Initialize(ncurses::Window* w) {
+	m_window = w;
+
 	m_inputmgr = std::make_unique<InputManager>();
 	m_drawmgr = std::make_unique<DrawManager>(w);
 
@@ -12,7 +14,7 @@ void game::Game::Initialize(ncurses::Window* w) {
 }
 
 void game::Game::NewGame() {
-	m_world = std::make_unique<World>();
+	m_world = std::make_unique<World>(ncurses::GetWindowSize(m_window));
 }
 
 void game::Game::DestroyGame() {
