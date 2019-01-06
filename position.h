@@ -7,12 +7,12 @@ namespace game {
 	class Position {
 		public:
 		Position();
-		Position(int x, int y);
+		Position(const int& x, const int& y);
 
-		int GetX();
-		int GetY();
-		void SetX(int x);
-		void SetY(int y);
+		const int& GetX() const;
+		const int& GetY() const;
+		void SetX(const int& x);
+		void SetY(const int& y);
 
 		private:
 		int m_x;
@@ -22,12 +22,12 @@ namespace game {
 	class Size {
 		public:
 		Size();
-		Size(int w, int h);
+		Size(const int& w, const int& h);
 
-		int GetW();
-		int GetH();
-		void SetW(int w);
-		void SetH(int h);
+		const int& GetW() const;
+		const int& GetH() const;
+		void SetW(const int& w);
+		void SetH(const int& h);
 
 		private:
 		int m_w;
