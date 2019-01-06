@@ -1,19 +1,32 @@
 #include "world.h"
 
-game::World::World() {
+game::World::World(const Size& world_size) :
+	m_world_size(world_size) {
+
 	Initialize();
 }
 
 void game::World::Initialize() {
 	m_localplayer = std::make_unique<Player>();
+	m_localplayer->SetName("Player");
+	m_localplayer->GetPosition().SetY(m_world_size.GetH() / 2);
+	m_localplayer->GetPosition().SetX(m_world_size.GetW() / 2);
 
-	// Temporarily fill zombie/item arrays for debugging & testing purposes
-	std::generate(m_zombies.begin(), m_zombies.end(), []() {
-		return std::make_unique<Zombie>();
-	});
+	auto time = std::chrono::high_resolution_clock::now();
 
-	std::generate(m_items.begin(), m_items.end(), []() {
-		return std::make_unique<Item>();
+	std::mt19937 r;
+	r.seed((std::chrono::high_resolution_clock::now() - time).count());
+	std::uniform_int_distribution<int> dis_y(0, 29);
+	std::uniform_int_distribution<int> dis_x(0, 150);
+
+	std::generate(m_zombies.begin(), m_zombies.end(), [&]() {
+		auto z = std::make_unique<Zombie>();
+
+		z->GetPosition().SetY(dis_y(r));
+		z->GetPosition().SetX(dis_x(r));
+		z->SetName("Zombie");
+
+		return z;
 	});
 }
 
