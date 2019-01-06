@@ -20,12 +20,12 @@ void game::Entity::Initialize() {
 	m_max_health = 100;
 }
 
-void game::Entity::Draw(ncurses::Window*) const {
-	mvaddch(m_position.GetY(), m_position.GetX(), m_name.at(0)); // for debugging and testing only
+void game::Entity::Draw(ncurses::Window* w) const {
+	ncurses::DrawCharacter(w, m_position.GetY(), m_position.GetX(), m_name.at(0)); // temporary
 }
 
 void game::Entity::Think() {
-
+	GetPosition().SetX(GetPosition().GetX() + 1);
 }
 
 bool game::Entity::IsValid() const {

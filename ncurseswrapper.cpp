@@ -40,6 +40,10 @@ void ncurses::ClearWindow(ncurses::Window* w) {
 	werase(w->Get());
 }
 
+void ncurses::DrawCharacter(Window* w, const int& y, const int& x, const char& c) {
+	mvwaddch(w->Get(), y, x, c);	
+}
+
 // class Window
 
 ncurses::Window::Window(WINDOW* w) : m_window(w) {

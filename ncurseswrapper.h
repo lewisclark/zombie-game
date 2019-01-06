@@ -17,6 +17,7 @@ namespace ncurses {
 	void Print(std::string str);
 	game::Size GetWindowSize(Window* w);
 	void ClearWindow(Window* w);
+	void DrawCharacter(Window* w, const int& y, const int& x, const char& c);
 
 	class Window {
 		public:
