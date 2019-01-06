@@ -13,17 +13,17 @@ namespace game {
 		Entity(std::string name);
 		virtual ~Entity();
 
-		void Draw(ncurses::Window* w);
+		void Draw(ncurses::Window* w) const;
 
 		virtual void Think();
-		virtual bool IsValid();
+		virtual bool IsValid() const;
 
-		std::string& GetName();
+		const std::string& GetName() const;
 		void SetName(const std::string& name);
-		int GetHealth();
+		const int& GetHealth() const;
 		void SetHealth(const int& health);
 		void Hurt(const int& damage);
-		int GetMaxHealth();
+		const int& GetMaxHealth() const;
 		void SetMaxHealth(const int& max_health);
 		Position& GetPosition();
 		void SetPosition(const Position& p);

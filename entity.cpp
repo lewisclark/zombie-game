@@ -20,7 +20,7 @@ void game::Entity::Initialize() {
 	m_max_health = 100;
 }
 
-void game::Entity::Draw(ncurses::Window*) {
+void game::Entity::Draw(ncurses::Window*) const {
 	mvaddch(m_position.GetY(), m_position.GetX(), m_name.at(0)); // for debugging and testing only
 }
 
@@ -28,11 +28,11 @@ void game::Entity::Think() {
 
 }
 
-bool game::Entity::IsValid() {
+bool game::Entity::IsValid() const {
 	return true;
 }
 
-std::string& game::Entity::GetName() {
+const std::string& game::Entity::GetName() const {
 	return m_name;
 }
 
@@ -40,7 +40,7 @@ void game::Entity::SetName(const std::string& name) {
 	m_name = name;
 }
 
-int game::Entity::GetHealth() {
+const int& game::Entity::GetHealth() const {
 	return m_health;
 }
 
@@ -52,7 +52,7 @@ void game::Entity::Hurt(const int& damage) {
 	m_health -= damage;
 }
 
-int game::Entity::GetMaxHealth() {
+const int& game::Entity::GetMaxHealth() const {
 	return m_max_health;
 }
 
