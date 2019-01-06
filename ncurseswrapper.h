@@ -16,6 +16,7 @@ namespace ncurses {
 	void Kill();
 	void Print(std::string str);
 	game::Size GetWindowSize(Window* w);
+	void ClearWindow(Window* w);
 
 	class Window {
 		public:

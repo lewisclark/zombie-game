@@ -6,6 +6,7 @@ game::DrawManager::DrawManager(ncurses::Window* w) :
 }
 
 void game::DrawManager::DrawWorld(World* world) {
+	ClearWindow(m_window);
 	DrawEntities(world->GetEntities());
 }
 

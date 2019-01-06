@@ -7,11 +7,11 @@ std::unique_ptr<ncurses::Window> ncurses::Initialize() {
 	}
 
 	// Make ncurses not wait for enter keypress for input and other stuff
-	if (noecho() == ERR || cbreak() == ERR || keypad(stdscr, true) == ERR || curs_set(0) == ERR) {
+	if (noecho() == ERR || cbreak() == ERR || keypad(stdscr, true) == ERR || curs_set(false) == ERR) {
 		throw std::exception();
 	}
 
-	timeout(0);
+	timeout(10);
 
 	return w;
 }
@@ -34,6 +34,10 @@ game::Size ncurses::GetWindowSize(Window* w) {
 	size.SetW(x);
 
 	return size;
+}
+
+void ncurses::ClearWindow(ncurses::Window* w) {
+	werase(w->Get());
 }
 
 // class Window
