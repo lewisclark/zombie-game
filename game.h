@@ -6,6 +6,7 @@
 #include "inputmanager.h"
 #include "world.h"
 #include "drawmanager.h"
+#include "logger.h"
 
 // Represents a game instance, holding everything pertaining to the game session
 
@@ -19,6 +20,7 @@ namespace game {
 		void Initialize(ncurses::Window* w); 		// Called at application startup
 		void NewGame();			// Called to create a new game (after main menu)
 		void DestroyGame();		// Called to destroy an active game (to exit to main menu)
+		void ProcessInput(std::vector<char> inputs);
 
 		std::unique_ptr<InputManager> m_inputmgr;
 		std::unique_ptr<World> m_world;

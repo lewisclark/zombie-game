@@ -22,7 +22,15 @@ void game::Game::DestroyGame() {
 }
 
 void game::Game::Loop() {
-	//m_inputmgr->HandleInput(); // inputmgr should send movement commands to the world instance (only player related) anything else is managed elsewhere
+	ProcessInput(m_inputmgr->GetStoredInput());
 	m_world->Think();
 	m_drawmgr->DrawWorld(m_world.get());
+}
+
+void game::Game::ProcessInput(std::vector<char> inputs) {
+	for (char c : inputs) {
+		logger->LogFormat("Stored Key: {}\n", c);
+	}
+
+	m_inputmgr->ClearStoredInput();
 }

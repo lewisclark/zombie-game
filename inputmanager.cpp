@@ -11,6 +11,14 @@ void game::InputManager::CheckInput() {
 		if (key == ERR)
 			continue;
 
-		//std::cout << "Key press: " << key << " (" << (int)key << ")" << "\n"; // debug
+		m_inputs.push_back(key);
 	}
+}
+
+const std::vector<char> game::InputManager::GetStoredInput() const {
+	return m_inputs;
+}
+
+void game::InputManager::ClearStoredInput() {
+	m_inputs.clear();
 }
