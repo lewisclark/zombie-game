@@ -23,14 +23,30 @@ void game::Game::DestroyGame() {
 
 void game::Game::Loop() {
 	ProcessInput(m_inputmgr->GetStoredInput());
-	m_world->Think();
-	m_drawmgr->DrawWorld(m_world.get());
+	Think();
+	Draw();
 }
 
-void game::Game::ProcessInput(std::vector<char> inputs) {
-	for (char c : inputs) {
-		logger->LogFormat("Stored Key: {}\n", c);
+void game::Game::ProcessInput(const std::vector<char>& inputs) {
+	if (m_menuopen) { // or m_menu->IsOpen()
+		// m_menu->ProcessInput(inputs);
+	}
+	else if (m_world) {
+		m_world->ProcessInput(inputs);
 	}
 
 	m_inputmgr->ClearStoredInput();
+}
+
+void game::Game::Think() {
+	m_world->Think();
+}
+
+void game::Game::Draw() {
+	if (m_menuopen) { // or m_menu->IsOpen()
+		// m_menu->Draw();
+	}
+	else if (m_world) {
+		//m_drawmgr->DrawWorld(m_world.get());
+	}
 }

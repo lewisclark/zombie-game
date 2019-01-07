@@ -56,3 +56,29 @@ std::array<game::Entity*, game::MAX_ENTITIES> game::World::GetEntities() {
 
 	return entities;
 }
+
+void game::World::ProcessInput(const std::vector<char>& inputs) {
+	for (char key : inputs) {
+		switch (key) {
+			case 'w':
+			case 'W': {
+				break;
+			}
+
+			case 'a':
+			case 'A': {
+				break;
+			}
+
+			case 's':
+			case 'S': {
+				break;
+			}
+
+			case 'd':
+			case 'D': {
+				break;
+			}
+		}
+	}
+}
