@@ -47,6 +47,6 @@ void game::Game::Draw() {
 		// m_menu->Draw();
 	}
 	else if (m_world) {
-		//m_drawmgr->DrawWorld(m_world.get());
+		m_drawmgr->DrawWorld(m_world.get());
 	}
 }

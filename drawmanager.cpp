@@ -6,6 +6,10 @@ game::DrawManager::DrawManager(Renderer* ren) :
 }
 
 void game::DrawManager::DrawWorld(World* world) {
+	m_renderer->SetDrawColor(42, 42, 42, 255);
+	m_renderer->Clear();
+	m_renderer->Present();
+
 	DrawEntities(world->GetEntities());
 }
 
