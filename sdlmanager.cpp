@@ -1,6 +1,14 @@
 #include "sdlmanager.h"
 
 game::SDLManager::~SDLManager() {
+	if (m_window) {
+		m_window->Destroy();
+	}
+
+	if (m_renderer) {
+		m_renderer->Destroy();
+	}
+
 	SDL_Quit();
 }
 

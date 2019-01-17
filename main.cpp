@@ -8,10 +8,17 @@ int main() {
 	auto sdlmanager = std::make_unique<SDLManager>();
 	sdlmanager->Init();
 
-	sdlmanager->CreateWindow();
-	sdlmanager->CreateRenderer();
+	if (!sdlmanager->CreateWindow()) {
+		return 1;
+	}
 
-	//auto game = std::make_unique<Game>(sdlmanager->CreateWindow());
+	auto renderer = sdlmanager->CreateRenderer();
+
+	if (!renderer) {
+		return 1;
+	}
+
+	//auto game = std::make_unique<Game>(renderer);
 
 	while (true) {
 		//game->Loop();

@@ -7,6 +7,9 @@ namespace game {
 	class Renderer {
 		public:
 		Renderer(SDL_Renderer* sdlrenderer);
+		~Renderer();
+
+		void Destroy();
 
 		private:
 		SDL_Renderer* m_sdlrenderer = nullptr;
