@@ -22,7 +22,7 @@ int main() {
 
 	auto game = std::make_unique<Game>(renderer);
 
-	while (true) {
+	while (!game->ShouldQuit()) {
 		game->Loop();
 
 		usleep(10000);

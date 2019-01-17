@@ -1,26 +1,21 @@
 #include "inputmanager.h"
 
 game::InputManager::InputManager() {
-	m_threadcheckinput = std::thread(&game::InputManager::CheckInput, this);
+
 }
 
-void game::InputManager::CheckInput() {
-	while (true) {
-		/*
-		char key = getch();
+void game::InputManager::ProcessInput() {
+	SDL_Event event;
 
-		if (key == ERR)
-			continue;
-
-		m_inputs.push_back(key);
-		*/
+	while (SDL_PollEvent(&event)) {
+		switch (event.type) {
+			case SDL_QUIT:
+				m_quitpolled = true;
+				break;	
+		}
 	}
 }
 
-const std::vector<char> game::InputManager::GetStoredInput() const {
-	return m_inputs;
-}
-
-void game::InputManager::ClearStoredInput() {
-	m_inputs.clear();
+bool game::InputManager::IsQuitPolled() {
+	return m_quitpolled;
 }

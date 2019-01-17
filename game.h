@@ -16,6 +16,7 @@ namespace game {
 		public:
 		Game(Renderer* w);
 		void Loop();
+		bool ShouldQuit();
 
 		private:
 		void Initialize(Renderer* w); 		// Called at application startup

@@ -1,6 +1,8 @@
 #ifndef INPUTMANAGER_H
 #define INPUTMANAGER_H
 
+#include <SDL2/SDL.h>
+
 #include <thread>
 #include <vector>
 
@@ -9,14 +11,11 @@ namespace game {
 		public:
 		InputManager();
 
-		const std::vector<char> GetStoredInput() const; // Return by copy to avoid race condition
-		void ClearStoredInput();
+		void ProcessInput();
+		bool IsQuitPolled();
 
 		private:
-		void CheckInput();
-
-		std::thread m_threadcheckinput;
-		std::vector<char> m_inputs;
+		bool m_quitpolled = false;
 	};
 }
 
