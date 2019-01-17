@@ -8,11 +8,13 @@ int main() {
 	auto sdlmanager = std::make_unique<SDLManager>();
 	sdlmanager->Init();
 
-	if (!sdlmanager->CreateWindow()) {
+	Window* win = sdlmanager->CreateWindow();
+
+	if (!win) {
 		return 1;
 	}
 
-	auto renderer = sdlmanager->CreateRenderer();
+	auto renderer = win->CreateRenderer(SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
 	if (!renderer) {
 		return 1;

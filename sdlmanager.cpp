@@ -5,10 +5,6 @@ game::SDLManager::~SDLManager() {
 		m_window->Destroy();
 	}
 
-	if (m_renderer) {
-		m_renderer->Destroy();
-	}
-
 	SDL_Quit();
 }
 
@@ -26,16 +22,4 @@ game::Window* game::SDLManager::CreateWindow() {
 	m_window = std::make_unique<Window>(sdlwin);
 
 	return m_window.get();
-}
-
-game::Renderer* game::SDLManager::CreateRenderer() {
-	SDL_Renderer* sdlren = SDL_CreateRenderer(m_window->GetSDLWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
-	if (!sdlren) {
-		return nullptr;
-	}
-
-	m_renderer = std::make_unique<Renderer>(sdlren);
-
-	return m_renderer.get();
 }
