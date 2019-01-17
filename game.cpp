@@ -1,14 +1,14 @@
 #include "game.h"
 
-game::Game::Game(/*ncurses::Window* w*/) {
-	//Initialize(w);
+game::Game::Game(Window* w) {
+	Initialize(w);
 }
 
-void game::Game::Initialize(/*ncurses::Window* w*/) {
-	//m_window = w;
+void game::Game::Initialize(Window* w) {
+	m_window = w;
 
 	m_inputmgr = std::make_unique<InputManager>();
-	m_drawmgr = std::make_unique<DrawManager>(/*w*/);
+	m_drawmgr = std::make_unique<DrawManager>(w);
 
 	NewGame(); // Immediately start a game for now until a menu exists
 }

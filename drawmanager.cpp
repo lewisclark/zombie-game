@@ -1,7 +1,7 @@
 #include "drawmanager.h"
 
-game::DrawManager::DrawManager(/*ncurses::Window* w*/) //:
-	/*m_window(w)*/ {
+game::DrawManager::DrawManager(Window* w) :
+	m_window(w) {
 
 }
 

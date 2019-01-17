@@ -1,27 +1,20 @@
 #include "main.h"
 
 int main() {
-	game::logger = std::make_unique<game::Logger>("shooter.log");
-	//std::unique_ptr<ncurses::Window> window;
+	using namespace game;
 
-	/*
-	try {
-		window = ncurses::Initialize();
+	logger = std::make_unique<Logger>("shooter.log");
 
-		game::logger->LogString("Successfully initialized ncurses\n");
-	}
-	catch (...) {
-		game::logger->LogString("Failed to initialize ncurses, stopping...\n");
-		ncurses::Kill();
+	auto sdlmanager = std::make_unique<SDLManager>();
+	sdlmanager->Init();
 
-		return 1;
-	}
-	*/
+	sdlmanager->CreateWindow();
+	sdlmanager->CreateRenderer();
 
-	auto game = std::make_unique<game::Game>(/*window.get()*/);
+	//auto game = std::make_unique<Game>(sdlmanager->CreateWindow());
 
 	while (true) {
-		game->Loop();
+		//game->Loop();
 
 		usleep(10000);
 	}

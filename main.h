@@ -4,6 +4,7 @@
 #include <memory>
 #include <unistd.h> // Linux only - no windows support
 
+#include "sdlmanager.h"
 #include "game.h"
 #include "logger.h"
 
