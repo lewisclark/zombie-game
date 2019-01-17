@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "window.h"
+#include "renderer.h"
 #include "inputmanager.h"
 #include "world.h"
 #include "drawmanager.h"
@@ -14,11 +14,11 @@
 namespace game {
 	class Game {
 		public:
-		Game(Window* w);
+		Game(Renderer* w);
 		void Loop();
 
 		private:
-		void Initialize(Window* w); 		// Called at application startup
+		void Initialize(Renderer* w); 		// Called at application startup
 		void NewGame();			// Called to create a new game (after main menu)
 		void DestroyGame();		// Called to destroy an active game (to exit to main menu)
 		void Think();
@@ -28,7 +28,7 @@ namespace game {
 		std::unique_ptr<InputManager> m_inputmgr;
 		std::unique_ptr<World> m_world;
 		std::unique_ptr<DrawManager> m_drawmgr;
-		Window* m_window; // Window for the world to display players, zombies, items, etc.
+		Renderer* m_renderer; // Window for the world to display players, zombies, items, etc.
 		bool m_menuopen;
 	};
 }

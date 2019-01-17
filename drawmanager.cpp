@@ -1,7 +1,7 @@
 #include "drawmanager.h"
 
-game::DrawManager::DrawManager(Window* w) :
-	m_window(w) {
+game::DrawManager::DrawManager(Renderer* ren) :
+	m_renderer(ren) {
 
 }
 

@@ -1,15 +1,13 @@
 #ifndef DRAWMANAGER_H
 #define DRAWMANAGER_H
 
-#include "window.h"
+#include "renderer.h"
 #include "world.h"
-
-// Responsible for everything drawing related
 
 namespace game {
 	class DrawManager {
 		public:
-		DrawManager(Window* w);
+		DrawManager(Renderer* w);
 
 		void DrawMenu();
 		void DrawWorld(World* world);
@@ -18,7 +16,7 @@ namespace game {
 		private:
 		void DrawEntities(const std::array<Entity*, game::MAX_ENTITIES>& entities);
 
-		Window* m_window;
+		Renderer* m_renderer;
 	};
 }
 

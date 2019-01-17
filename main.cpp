@@ -18,7 +18,7 @@ int main() {
 		return 1;
 	}
 
-	//auto game = std::make_unique<Game>(renderer);
+	auto game = std::make_unique<Game>(renderer);
 
 	while (true) {
 		//game->Loop();
