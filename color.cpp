@@ -14,18 +14,18 @@ game::Color::Color(std::uint8_t r, std::uint8_t g, std::uint8_t b) :
 	
 }
 
-std::uint8_t game::Color::GetR() {
+std::uint8_t game::Color::GetR() const {
 	return m_r;
 }
 
-std::uint8_t game::Color::GetG() {
+std::uint8_t game::Color::GetG() const {
 	return m_g;
 }
 
-std::uint8_t game::Color::GetB() {
+std::uint8_t game::Color::GetB() const {
 	return m_b;
 }
 
-std::uint8_t game::Color::GetA() {
+std::uint8_t game::Color::GetA() const {
 	return m_a;
 }
