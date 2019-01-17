@@ -21,12 +21,10 @@ int main() {
 	auto game = std::make_unique<Game>(renderer);
 
 	while (true) {
-		//game->Loop();
+		game->Loop();
 
 		usleep(10000);
 	}
-
-	//ncurses::Kill();
 
 	return 0;
 }

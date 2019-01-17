@@ -3,6 +3,8 @@
 
 #include <SDL2/SDL.h>
 
+#include "position.h"
+
 namespace game {
 	class Renderer {
 		public:
@@ -10,6 +12,7 @@ namespace game {
 		~Renderer();
 
 		void Destroy();
+		Size GetCanvasSize();
 
 		private:
 		SDL_Renderer* m_sdlrenderer = nullptr;

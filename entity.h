@@ -3,6 +3,7 @@
 
 #include <string>
 
+#include "renderer.h"
 #include "position.h"
 
 namespace game {
@@ -12,7 +13,7 @@ namespace game {
 		Entity(std::string name);
 		virtual ~Entity();
 
-		void Draw(/*ncurses::Window* w*/) const;
+		void Draw(Renderer* ren) const;
 
 		virtual void Think();
 		virtual bool IsValid() const;

@@ -14,7 +14,7 @@ void game::Game::Initialize(Renderer* ren) {
 }
 
 void game::Game::NewGame() {
-	m_world = std::make_unique<World>(Size(0, 0)/*ncurses::GetWindowSize(m_window)*/);
+	m_world = std::make_unique<World>(m_renderer->GetCanvasSize());
 }
 
 void game::Game::DestroyGame() {
