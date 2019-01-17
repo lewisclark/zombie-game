@@ -4,8 +4,6 @@
 #include <thread>
 #include <vector>
 
-#include "ncurseswrapper.h"
-
 namespace game {
 	class InputManager {
 		public:

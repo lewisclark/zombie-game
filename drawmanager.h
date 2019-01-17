@@ -1,7 +1,6 @@
 #ifndef DRAWMANAGER_H
 #define DRAWMANAGER_H
 
-#include "ncurseswrapper.h"
 #include "world.h"
 
 // Responsible for everything drawing related
@@ -9,7 +8,7 @@
 namespace game {
 	class DrawManager {
 		public:
-		DrawManager(ncurses::Window* w);
+		DrawManager(/*ncurses::Window* w*/);
 
 		void DrawMenu();
 		void DrawWorld(World* world);
@@ -18,7 +17,7 @@ namespace game {
 		private:
 		void DrawEntities(const std::array<Entity*, game::MAX_ENTITIES>& entities);
 
-		ncurses::Window* m_window;
+		/*ncurses::Window* m_window;*/
 	};
 }
 

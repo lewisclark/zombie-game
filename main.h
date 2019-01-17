@@ -4,7 +4,6 @@
 #include <memory>
 #include <unistd.h> // Linux only - no windows support
 
-#include "ncurseswrapper.h"
 #include "game.h"
 #include "logger.h"
 

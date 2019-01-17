@@ -4,7 +4,6 @@
 #include <string>
 
 #include "position.h"
-#include "ncurseswrapper.h"
 
 namespace game {
 	class Entity {
@@ -13,7 +12,7 @@ namespace game {
 		Entity(std::string name);
 		virtual ~Entity();
 
-		void Draw(ncurses::Window* w) const;
+		void Draw(/*ncurses::Window* w*/) const;
 
 		virtual void Think();
 		virtual bool IsValid() const;

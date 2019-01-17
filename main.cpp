@@ -2,8 +2,9 @@
 
 int main() {
 	game::logger = std::make_unique<game::Logger>("shooter.log");
-	std::unique_ptr<ncurses::Window> window;
+	//std::unique_ptr<ncurses::Window> window;
 
+	/*
 	try {
 		window = ncurses::Initialize();
 
@@ -15,8 +16,9 @@ int main() {
 
 		return 1;
 	}
+	*/
 
-	auto game = std::make_unique<game::Game>(window.get());
+	auto game = std::make_unique<game::Game>(/*window.get()*/);
 
 	while (true) {
 		game->Loop();
@@ -24,7 +26,7 @@ int main() {
 		usleep(10000);
 	}
 
-	ncurses::Kill();
+	//ncurses::Kill();
 
 	return 0;
 }

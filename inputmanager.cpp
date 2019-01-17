@@ -6,12 +6,14 @@ game::InputManager::InputManager() {
 
 void game::InputManager::CheckInput() {
 	while (true) {
+		/*
 		char key = getch();
 
 		if (key == ERR)
 			continue;
 
 		m_inputs.push_back(key);
+		*/
 	}
 }
 
