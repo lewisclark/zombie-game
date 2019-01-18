@@ -6,6 +6,8 @@
 #include <thread>
 #include <vector>
 
+#include "key.h"
+
 namespace game {
 	class InputManager {
 		public:
@@ -13,6 +15,7 @@ namespace game {
 
 		void ProcessInput();
 		bool IsQuitPolled();
+		bool IsKeyDown(Key k);
 
 		private:
 		bool m_quitpolled = false;

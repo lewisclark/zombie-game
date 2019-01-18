@@ -19,3 +19,7 @@ void game::InputManager::ProcessInput() {
 bool game::InputManager::IsQuitPolled() {
 	return m_quitpolled;
 }
+
+bool game::InputManager::IsKeyDown(Key) {
+	return false;
+}
