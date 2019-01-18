@@ -22,9 +22,6 @@ namespace game {
 		void Initialize(Renderer* w); 		// Called at application startup
 		void NewGame();			// Called to create a new game (after main menu)
 		void DestroyGame();		// Called to destroy an active game (to exit to main menu)
-		void Think();
-		void ProcessInput(const std::vector<char>& inputs);
-		void Draw();
 
 		std::unique_ptr<InputManager> m_inputmgr;
 		std::unique_ptr<World> m_world;
