@@ -23,15 +23,8 @@ void game::Game::DestroyGame() {
 
 void game::Game::Loop() {
 	m_inputmgr->ProcessInput();
-	Think();
-	Draw();
-}
-
-void game::Game::Think() {
 	m_world->Think();
-}
-
-void game::Game::Draw() {
+	
 	if (m_menuopen) { // or m_menu->IsOpen()
 		// m_menu->Draw();
 	}
