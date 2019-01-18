@@ -6,7 +6,10 @@ int main() {
 	logger = std::make_unique<Logger>("shooter.log");
 
 	auto sdlmanager = std::make_unique<SDLManager>();
-	sdlmanager->Init();
+	
+	if (!sdlmanager->Init()) {
+		return 1;
+	}
 
 	Window* win = sdlmanager->CreateWindow();
 
