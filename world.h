@@ -18,7 +18,6 @@ namespace game {
 		World(const Size& world_size);
 		void Initialize();
 		void Think(const InputManager* const inputmgr);
-		void ProcessInput(const std::vector<char>& inputs);
 
 		std::array<Entity*, MAX_ENTITIES> GetEntities();
 
