@@ -5,6 +5,7 @@
 
 #include "renderer.h"
 #include "position.h"
+#include "inputmanager.h"
 
 namespace game {
 	class Entity {
@@ -13,7 +14,7 @@ namespace game {
 		Entity(std::string name);
 		virtual ~Entity();
 
-		virtual void Think();
+		virtual void Think(const InputManager* const inputmgr);
 		virtual bool IsValid() const;
 		virtual void Draw(Renderer* ren);
 

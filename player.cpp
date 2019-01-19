@@ -1,7 +1,7 @@
 #include "player.h"
 
-void game::Player::Think() {
-	Character::Think();
+void game::Player::Think(const InputManager* const inputmgr) {
+	Character::Think(inputmgr);
 }
 
 bool game::Player::IsValid() const {

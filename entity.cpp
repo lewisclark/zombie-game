@@ -17,7 +17,7 @@ void game::Entity::Draw(Renderer*) {
 
 }
 
-void game::Entity::Think() {
+void game::Entity::Think(const InputManager* const) {
 
 }
 

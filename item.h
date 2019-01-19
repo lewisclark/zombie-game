@@ -6,7 +6,7 @@
 namespace game {
 	class Item : public Entity {
 		public:
-		void Think();
+		void Think(const InputManager* const inputmgr);
 		bool IsValid() const;
 
 		private:

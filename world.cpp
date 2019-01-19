@@ -30,10 +30,10 @@ void game::World::Initialize() {
 	});
 }
 
-void game::World::Think() {
+void game::World::Think(const InputManager* const inputmgr) {
 	for (Entity* e : GetEntities()) {
 		if (e && e->IsValid()) {
-			e->Think();
+			e->Think(inputmgr);
 		}
 	}
 }

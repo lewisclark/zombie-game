@@ -7,7 +7,7 @@ namespace game {
 	class Character : public Entity {
 		public:
 		virtual ~Character();
-		virtual void Think();
+		virtual void Think(const InputManager* const inputmgr);
 		virtual bool IsValid() const;
 
 		private:
