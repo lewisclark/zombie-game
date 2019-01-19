@@ -8,6 +8,7 @@ namespace game {
 		public:
 		void Think(const InputManager* const inputmgr);
 		bool IsValid() const;
+		void Draw(Renderer* ren);
 
 		private:
 	};
