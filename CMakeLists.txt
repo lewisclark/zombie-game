@@ -15,7 +15,10 @@ include_directories(fmt/include)
 add_subdirectory(fmt)
 
 # Sources to compile
-set(sources main.cpp sdlmanager.cpp window.cpp renderer.cpp world.cpp entity.cpp item.cpp position.cpp player.cpp zombie.cpp character.cpp drawmanager.cpp game.cpp inputmanager.cpp logger.cpp color.cpp)
+set(sources
+	main.cpp logger.cpp sdlmanager.cpp window.cpp renderer.cpp world.cpp
+	entities/entity.cpp entities/item.cpp entities/player.cpp entities/zombie.cpp entities/character.cpp
+	position.cpp drawmanager.cpp game.cpp inputmanager.cpp color.cpp)
 
 add_executable(game ${sources})
 target_link_libraries(game ${SDL2_LIBRARIES} fmt)

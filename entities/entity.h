@@ -3,9 +3,9 @@
 
 #include <string>
 
-#include "renderer.h"
-#include "position.h"
-#include "inputmanager.h"
+#include "../renderer.h"
+#include "../position.h"
+#include "../inputmanager.h"
 
 namespace game {
 	class Entity {

@@ -8,9 +8,9 @@
 #include <chrono>
 
 #include "globals.h"
-#include "player.h"
-#include "zombie.h"
-#include "item.h"
+#include "entities/player.h"
+#include "entities/zombie.h"
+#include "entities/item.h"
 
 namespace game {
 	class World {
