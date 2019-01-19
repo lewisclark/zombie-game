@@ -10,6 +10,7 @@
 #include "player.h"
 #include "zombie.h"
 #include "item.h"
+#include "bullet.h"
 
 namespace game {
 	class EntityFactory {
@@ -21,6 +22,7 @@ namespace game {
 		Player* CreatePlayer();
 		Zombie* CreateZombie(bool random_position = false);
 		Item* CreateItem();
+		Bullet* CreateBullet();
 
 		private:
 		Position GetRandomPosition();
@@ -30,6 +32,7 @@ namespace game {
 		std::vector<std::unique_ptr<Player>> m_players;
 		std::vector<std::unique_ptr<Zombie>> m_zombies;
 		std::vector<std::unique_ptr<Item>> m_items;
+		std::vector<std::unique_ptr<Bullet>> m_bullets;
 	};
 }
 

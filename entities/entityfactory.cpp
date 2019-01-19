@@ -47,6 +47,12 @@ game::Item* game::EntityFactory::CreateItem() {
 	return m_items.back().get();
 }
 
+game::Bullet* game::EntityFactory::CreateBullet() {
+	m_bullets.push_back(std::make_unique<Bullet>());
+
+	return m_bullets.back().get();
+}
+
 game::Position game::EntityFactory::GetRandomPosition() {
 	std::uniform_int_distribution<int> dis_x(0, m_mapsize.GetW());
 	std::uniform_int_distribution<int> dis_y(0, m_mapsize.GetH());
