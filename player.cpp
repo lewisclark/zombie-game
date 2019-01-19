@@ -2,6 +2,34 @@
 
 void game::Player::Think(const InputManager* const inputmgr) {
 	Character::Think(inputmgr);
+
+	if (inputmgr->IsKeyDown(KEY_W)) {
+		auto newpos = Position(GetPosition());
+
+		newpos.SetY(newpos.GetY() - GetSpeed());
+		SetPosition(newpos);
+	}
+
+	if (inputmgr->IsKeyDown(KEY_A)) {
+		auto newpos = Position(GetPosition());
+
+		newpos.SetX(newpos.GetX() - GetSpeed());
+		SetPosition(newpos);
+	}
+
+	if (inputmgr->IsKeyDown(KEY_S)) {
+		auto newpos = Position(GetPosition());
+
+		newpos.SetY(newpos.GetY() + GetSpeed());
+		SetPosition(newpos);
+	}
+
+	if (inputmgr->IsKeyDown(KEY_D)) {
+		auto newpos = Position(GetPosition());
+
+		newpos.SetX(newpos.GetX() + GetSpeed());
+		SetPosition(newpos);
+	}
 }
 
 bool game::Player::IsValid() const {
