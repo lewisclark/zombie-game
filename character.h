@@ -8,7 +8,7 @@ namespace game {
 		public:
 		virtual ~Character();
 		virtual void Think();
-		virtual bool IsValid();
+		virtual bool IsValid() const;
 
 		private:
 		int strength;

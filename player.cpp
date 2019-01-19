@@ -4,6 +4,6 @@ void game::Player::Think() {
 	Character::Think();
 }
 
-bool game::Player::IsValid() {
+bool game::Player::IsValid() const {
 	return Character::IsValid();
 }

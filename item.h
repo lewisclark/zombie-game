@@ -7,7 +7,7 @@ namespace game {
 	class Item : public Entity {
 		public:
 		void Think();
-		bool IsValid();
+		bool IsValid() const;
 
 		private:
 	};

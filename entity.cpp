@@ -1,23 +1,16 @@
 #include "entity.h"
 
 game::Entity::Entity() {
-	Initialize();
+
 }
 
-game::Entity::Entity(std::string name) {
-	Initialize();
+game::Entity::Entity(std::string name) :
+	m_name(name) {
 
-	m_name = name;
 }
 
 game::Entity::~Entity() {
 
-}
-
-void game::Entity::Initialize() {
-	m_name = "<unknown>";
-	m_health = 100;
-	m_max_health = 100;
 }
 
 void game::Entity::Draw(Renderer*) const {

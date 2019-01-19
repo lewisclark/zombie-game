@@ -7,7 +7,7 @@ namespace game {
 	class Zombie : public Character {
 		public:
 		void Think();
-		bool IsValid();
+		bool IsValid() const;
 
 		private:
 	};

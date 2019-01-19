@@ -4,6 +4,6 @@ void game::Item::Think() {
 	Entity::Think();
 }
 
-bool game::Item::IsValid() {
+bool game::Item::IsValid() const {
 	return Entity::IsValid();
 }

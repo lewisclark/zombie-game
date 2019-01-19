@@ -8,6 +8,6 @@ void game::Character::Think() {
 	Entity::Think();
 }
 
-bool game::Character::IsValid() {
+bool game::Character::IsValid() const {
 	return Entity::IsValid();
 }

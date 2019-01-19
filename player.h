@@ -7,7 +7,7 @@ namespace game {
 	class Player : public Character {
 		public:
 		void Think();
-		bool IsValid();
+		bool IsValid() const;
 
 		private:
 	};
