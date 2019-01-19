@@ -30,6 +30,10 @@ void game::Player::Think(const InputManager* const inputmgr) {
 		newpos.SetX(newpos.GetX() + GetSpeed());
 		SetPosition(newpos);
 	}
+
+	if (inputmgr->IsClicking()) {
+		Fire(inputmgr->GetMousePos());
+	}
 }
 
 bool game::Player::IsValid() const {
@@ -42,4 +46,8 @@ void game::Player::Draw(Renderer* ren) {
 
 	ren->SetDrawColor(Color(255, 255, 0));
 	ren->DrawRect(pos.GetX() - (size.GetW() / 2), pos.GetY() - (size.GetH() / 2), size.GetW() / 2, size.GetH() / 2);
+}
+
+void game::Player::Fire(const Position& mousepos) {
+
 }

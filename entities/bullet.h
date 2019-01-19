@@ -6,8 +6,11 @@
 namespace game {
 	class Bullet : public Projectile {
 		public:
+		Bullet();
+
 		void Think(const InputManager* const inputmgr);
 		bool IsValid() const;
+		void Draw(Renderer* ren);
 
 		private:
 	};
