@@ -3,7 +3,7 @@
 int main() {
 	using namespace game;
 
-	logger = std::make_unique<Logger>("shooter.log");
+	logger = std::make_unique<Logger>("game.log");
 
 	auto sdlmanager = std::make_unique<SDLManager>();
 	

@@ -13,7 +13,7 @@ bool game::SDLManager::Init() {
 }
 
 game::Window* game::SDLManager::CreateWindow() {
-	SDL_Window* sdlwin = SDL_CreateWindow("Zombie Shooter", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
+	SDL_Window* sdlwin = SDL_CreateWindow("Zombie Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
 
 	if (!sdlwin) {
 		return nullptr;
