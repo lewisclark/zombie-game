@@ -11,9 +11,15 @@ void game::InputManager::Loop() {
 		}
 	}
 
+	m_prevmousestate = m_mousestate;
+
 	DoPoll(); // Calls SDL_PumpEvents for us
 
 	m_keystate = SDL_GetKeyboardState(nullptr);
+
+	int x, y;
+	m_mousestate = SDL_GetMouseState(&x, &y);
+	m_mousepos = Position(x, y);
 }
 
 void game::InputManager::DoPoll() {
@@ -46,4 +52,12 @@ bool game::InputManager::IsKeyDown(const Key k) const {
 
 bool game::InputManager::IsKeyDown(const Key k, const std::uint8_t* const keystate) const {
 	return keystate[k] != 0;
+}
+
+bool game::InputManager::IsClicking() const {
+	return (m_mousestate & SDL_BUTTON(SDL_BUTTON_LEFT)) || (m_mousestate & SDL_BUTTON(SDL_BUTTON_RIGHT));
+}
+
+game::Position game::InputManager::GetMousePos() const {
+	return m_mousepos;
 }
