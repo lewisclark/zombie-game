@@ -1,4 +1,4 @@
-/* MIT License
+MIT License
 
 Copyright (c) 2019 Lewis Clark
 
@@ -18,31 +18,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE. */
-
-
-#include "sdlmanager.h"
-
-game::SDLManager::~SDLManager() {
-	if (m_window) {
-		m_window->Destroy();
-	}
-
-	SDL_Quit();
-}
-
-bool game::SDLManager::Init() {
-	return SDL_Init(SDL_INIT_VIDEO) ? false : true;
-}
-
-game::Window* game::SDLManager::CreateWindow() {
-	SDL_Window* sdlwin = SDL_CreateWindow("Zombie Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
-
-	if (!sdlwin) {
-		return nullptr;
-	}
-
-	m_window = std::make_unique<Window>(sdlwin);
-
-	return m_window.get();
-}
+SOFTWARE.
