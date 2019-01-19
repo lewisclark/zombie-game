@@ -49,9 +49,9 @@ std::vector<game::Entity*> game::EntityFactory::GetEntities() {
 }
 
 void game::EntityFactory::PurgeInvalidEntities() {
-	m_players.erase(std::remove_if(m_players.begin(), m_players.end(), [=](const auto& e) { return (e && e->IsValid()); }));
-	m_zombies.erase(std::remove_if(m_zombies.begin(), m_zombies.end(), [=](const auto& e) { return (e && e->IsValid()); }));
-	m_items.erase(std::remove_if(m_items.begin(), m_items.end(), [=](const auto& e) { return (e && e->IsValid()); }));
+	m_players.erase(std::remove_if(m_players.begin(), m_players.end(), [=](const auto& e) { return (!(e && e->IsValid())); }), m_players.end());
+	m_zombies.erase(std::remove_if(m_zombies.begin(), m_zombies.end(), [=](const auto& e) { return (!(e && e->IsValid())); }), m_zombies.end());
+	m_items.erase(std::remove_if(m_items.begin(), m_items.end(), [=](const auto& e) { return (!(e && e->IsValid())); }), m_items.end());
 }
 
 game::Player* game::EntityFactory::CreatePlayer() {
