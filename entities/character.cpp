@@ -1,5 +1,9 @@
 #include "character.h"
 
+game::Character::Character() {
+	SetSize(Size(10, 10));
+}
+
 game::Character::~Character() {
 
 }

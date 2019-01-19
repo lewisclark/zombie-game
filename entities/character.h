@@ -6,7 +6,9 @@
 namespace game {
 	class Character : public Entity {
 		public:
+		Character();
 		virtual ~Character();
+
 		virtual void Think(const InputManager* const inputmgr);
 		virtual bool IsValid() const;
 
