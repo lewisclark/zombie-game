@@ -21,6 +21,7 @@ namespace game {
 		void Present();
 		bool SetDrawColor(const Color& col);
 		bool SetDrawColor(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a);
+		bool DrawRect(int x, int y, int w, int h);
 
 		private:
 		SDL_Renderer* m_sdlrenderer = nullptr;
