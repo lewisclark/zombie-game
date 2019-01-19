@@ -15,7 +15,7 @@ namespace game {
 
 		virtual void Think();
 		virtual bool IsValid() const;
-		virtual void Draw(Renderer* ren) const;
+		virtual void Draw(Renderer* ren);
 
 		const std::string& GetName() const;
 		void SetName(const std::string& name);

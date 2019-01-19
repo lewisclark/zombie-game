@@ -13,7 +13,7 @@ game::Entity::~Entity() {
 
 }
 
-void game::Entity::Draw(Renderer*) const {
+void game::Entity::Draw(Renderer*) {
 
 }
 
