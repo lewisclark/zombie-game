@@ -29,10 +29,10 @@ namespace game {
 		const int& GetMaxHealth() const;
 		void SetMaxHealth(const int& max_health);
 
-		Position& GetPosition();
+		const Position& GetPosition() const;
 		void SetPosition(const Position& p);
 
-		Size& GetSize();
+		const Size& GetSize() const;
 		void SetSize(const Size& s);
 
 		private:

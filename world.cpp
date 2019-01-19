@@ -9,9 +9,9 @@ game::World::World(const Size& world_size) :
 void game::World::Initialize() {
 	m_localplayer = std::make_unique<Player>();
 	m_localplayer->SetName("Player");
-	m_localplayer->GetPosition().SetY(m_world_size.GetH() / 2);
-	m_localplayer->GetPosition().SetX(m_world_size.GetW() / 2);
+	m_localplayer->SetPosition(Position(m_world_size.GetW() / 2, m_world_size.GetH() / 2));
 
+	/*
 	auto time = std::chrono::high_resolution_clock::now();
 
 	std::mt19937 r;
@@ -22,12 +22,12 @@ void game::World::Initialize() {
 	std::generate(m_zombies.begin(), m_zombies.end(), [&]() {
 		auto z = std::make_unique<Zombie>();
 
-		z->GetPosition().SetY(dis_y(r));
-		z->GetPosition().SetX(dis_x(r));
+		z->SetPosition(Position(dis_x(r), dis_y(r)));
 		z->SetName("Zombie");
 
 		return z;
 	});
+	*/
 }
 
 void game::World::Think(const InputManager* const inputmgr) {

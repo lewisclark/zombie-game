@@ -53,7 +53,7 @@ void game::Entity::SetMaxHealth(const int& max_health) {
 	m_max_health = max_health;
 }
 
-game::Position& game::Entity::GetPosition() {
+const game::Position& game::Entity::GetPosition() const {
 	return m_position;
 }
 
@@ -61,7 +61,7 @@ void game::Entity::SetPosition(const Position& p) {
 	m_position = p;
 }
 
-game::Size& game::Entity::GetSize() {
+const game::Size& game::Entity::GetSize() const {
 	return m_size;
 }
 
