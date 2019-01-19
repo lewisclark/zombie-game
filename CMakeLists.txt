@@ -17,7 +17,7 @@ add_subdirectory(fmt)
 # Sources to compile
 set(sources
 	main.cpp logger.cpp sdlmanager.cpp window.cpp renderer.cpp world.cpp
-	entities/entity.cpp entities/item.cpp entities/player.cpp entities/zombie.cpp entities/character.cpp
+	entities/entity.cpp entities/item.cpp entities/player.cpp entities/zombie.cpp entities/character.cpp entities/projectile.cpp entities/bullet.cpp
 	position.cpp drawmanager.cpp game.cpp inputmanager.cpp color.cpp)
 
 add_executable(game ${sources})
