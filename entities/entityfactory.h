@@ -41,6 +41,7 @@ namespace game {
 		EntityFactory(const Size& map_size);
 
 		std::vector<Entity*> GetEntities();
+		void PurgeInvalidEntities();
 
 		Player* CreatePlayer();
 		Zombie* CreateZombie(bool random_position = false);
