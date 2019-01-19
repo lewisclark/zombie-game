@@ -28,6 +28,7 @@ void game::World::Initialize() {
 	});
 }
 
+// TODO: Remove invalid entities
 void game::World::Think(const InputManager* const inputmgr) {
 	for (Entity* e : GetEntities()) {
 		if (e && e->IsValid()) {
