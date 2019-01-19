@@ -27,8 +27,6 @@ int main() {
 
 	while (!game->ShouldQuit()) {
 		game->Loop();
-
-		usleep(10000);
 	}
 
 	return 0;
