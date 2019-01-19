@@ -48,6 +48,6 @@ void game::Player::Draw(Renderer* ren) {
 	ren->DrawRect(pos.GetX() - (size.GetW() / 2), pos.GetY() - (size.GetH() / 2), size.GetW() / 2, size.GetH() / 2);
 }
 
-void game::Player::Fire(const Position& mousepos) {
+void game::Player::Fire(const Position&) {
 
 }
