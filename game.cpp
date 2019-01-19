@@ -22,7 +22,7 @@ void game::Game::DestroyGame() {
 }
 
 void game::Game::Loop() {
-	m_inputmgr->ProcessInput();
+	m_inputmgr->Loop();
 	m_world->Think();
 	
 	if (m_menuopen) { // or m_menu->IsOpen()
